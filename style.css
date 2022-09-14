@@ -93,15 +93,6 @@ b {
 	margin-top: 0;
 }
 
-.btn.disabled,
-.btn[disabled] {
-	cursor: not-allowed;
-	filter: alpha(opacity=65);
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	opacity: 0.65;
-}
-
 .card.input-group:last-child {
 	margin-bottom: 0;
 }
@@ -533,6 +524,7 @@ input:checked {
 .btn[disabled] {
 	background-color: #7d7d7d;
 	color: #f0f0f0;
+	cursor: not-allowed;
 }
 
 .btn.empty[disabled] {
