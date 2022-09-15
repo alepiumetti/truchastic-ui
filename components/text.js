@@ -2,7 +2,7 @@
 // Text
 // ------------------------------------
 
-class tuiText extends HTMLElement {
+class tuiCode extends HTMLElement {
 	constructor() {
 		super();
 	}
@@ -16,11 +16,19 @@ class tuiText extends HTMLElement {
 
 		shadowDom.innerHTML = `
     <style>
-    
+      .code{
+        background-color:#cacaca;
+        padding:5px;
+        font-family: monospace;
+        color:black;
+        border-radius: 5px;
+        display:inhereit;
+      }
+
      </style>
 
-     <p><slot></slot></p>`;
+     <code class="code"><slot></slot></code>`;
 	}
 }
 
-window.customElements.define('tui-text', tuiText);
+window.customElements.define('tui-code-line', tuiCode);
