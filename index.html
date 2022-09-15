@@ -13,18 +13,112 @@
 <body>
 
 
-  <div>
+  <div style="
+  background: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 8%) 0px 0.9px 4px, rgb(0 0 0 / 6%) 0px 2.6px 8px, rgb(0 0 0 / 5%) 0px 5.7px 12px, rgb(0 0 0 / 4%) 0px 15px 15px;
+  border-inline-start: 1px solid rgba(211, 218, 230, 0.7);
+  margin: 10px;
+  padding: 10px;
+  ">
+    <iframe style="position: absolute; right: 0px; "
+      src="https://ghbtns.com/github-btn.html?user=alepiumetti&repo=truchastic-ui&type=star&count=true" frameborder="0"
+      scrolling="0" width="150" height="20" title="GitHub"></iframe>
+
+    <header>
+      <tui-container w="100%" textAlign="center">
+        <h1>Truchastic UI</h1>
+      </tui-container>
+      <tui-container w="100%" textAlign="center">
+        <h3>CSS Library based on WebComponents | Inspired on Elastic UI and Chakra UI</h3>
+      </tui-container>
+    </header>
+
+    <hr />
+    <p> ⚠️ Under construction ⚠️ </p>
+    <hr />
+
+    <tui-container padding=10>
+
+
+      <h3>Buttons</h3>
+
+      <tui-container>
+        <tui-code-line>
+          &lt;tui-button&gt;btn&lt;/tui-button&gt;
+        </tui-code-line>
+      </tui-container>
+
+      <br />
+
+      <tui-container w="100%">
+        <table>
+          <tr>
+            <th>
+              Attribute
+            </th>
+            <th>
+              Type
+            </th>
+            <th>
+              Values
+            </th>
+          </tr>
+          <tr>
+            <td>variant</td>
+            <td>string</td>
+            <td>
+              <tui-code-line>primary</tui-code-line>
+              <tui-code-line>danger</tui-code-line>
+              <tui-code-line>success</tui-code-line>
+              <tui-code-line>warning</tui-code-line>
+            </td>
+          </tr>
+        </table>
+      </tui-container>
+
+      <br />
+
+      <tui-hstack justifyContent="space-around" w="50%">
+        <tui-button variant="primary">Primary</tui-button>
+        <tui-button variant="primary" filled=true>Filled</tui-button>
+        <tui-button variant="primary" empty=true>Empty</tui-button>
+      </tui-hstack>
+      <br />
+      <tui-hstack justifyContent="space-around" w="50%">
+        <tui-button variant="danger">Danger</tui-button>
+        <tui-button variant="danger" filled=true>Filled</tui-button>
+        <tui-button variant="danger" empty=true>Empty</tui-button>
+      </tui-hstack>
+      <br />
+      <tui-hstack justifyContent="space-around" w="50%">
+        <tui-button variant="success">Success</tui-button>
+        <tui-button variant="success" filled=true>Filled</tui-button>
+        <tui-button variant="success" empty=true>Empty</tui-button>
+      </tui-hstack>
+      <br />
+      <tui-hstack justifyContent="space-around" w="50%">
+        <tui-button variant="warning">Warning</tui-button>
+        <tui-button variant="warning" filled=true>Filled</tui-button>
+        <tui-button variant="warning" empty=true>Empty</tui-button>
+      </tui-hstack>
+    </tui-container>
+    <br />
+
+
 
   </div>
 
-  <h1>Truchastic UI</h1>
-  <h2>CSS Library based on WebComponents | Inspired on Elastic UI</h2>
+  <footer>
 
-  <tui-text>text</tui-text>
+    <tui-container p=5 textAlign="right">
+      <p style="font-size: small; ">Built with ❤️ by <a href="https://alejandropiumetti.com.ar/">alepiumetti</a></p>
+    </tui-container>
 
-  <tui-button variant="danger" filled=true>Button</tui-button>
+  </footer>
 
 
+
+  <script src="./components/layout.js"></script>
   <script src="./components/buttons.js"></script>
   <script src="./components/text.js"></script>
   <script src="./script.js"></script>

@@ -300,11 +300,6 @@ b {
 	text-align: center;
 }
 
-th,
-td {
-	border: 1px solid black;
-}
-
 .logEntry {
 	display: flex;
 	justify-content: space-between;
@@ -763,8 +758,16 @@ table th {
 	color: #666;
 }
 
-.no-border {
-	border-style: none;
+table {
+	text-align: center;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th,
+td {
+	border-bottom: 1px solid #ddd;
+	padding: 7px;
 }
 
 .no-border th {
