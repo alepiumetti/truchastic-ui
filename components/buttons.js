@@ -44,17 +44,17 @@ class tuiButton extends HTMLElement {
 				break;
 		}
 
-		if (attr.filled) {
+		if (attr.filled === 'true' || attr.filled === true) {
 			classes = classes + ' filled';
 		}
 
-		if (attr.empty) {
+		if (attr.empty === 'true' || attr.empty === true) {
 			classes = classes + ' empty';
 		}
 
 		let disabled = '';
 
-		if (attr.disabled) {
+		if (attr.disabled === 'true' || attr.disabled === true) {
 			disabled = 'disabled';
 		}
 
