@@ -111,11 +111,11 @@ class tuiButton extends HTMLElement {
     
     .btn.success {
       background-color: #cdf3f0;
-      color: #127271;
+      color: rgb(0, 108, 102);
     }
     
     .btn.success.filled {
-      background-color: #127271;
+      background-color: rgb(0, 191, 179);
       color: #000000;
     }
     
