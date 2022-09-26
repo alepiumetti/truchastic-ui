@@ -17,10 +17,42 @@ class tuiCode extends HTMLElement {
 		shadowDom.innerHTML = `
     <style>
       .code{
-        background-color:#cacaca;
+        background-color:#001626;
         padding:5px;
         font-family: monospace;
-        color:black;
+        font-size:10pt;
+        color:#c5cddb;
+        border-radius: 5px;
+        display:inhereit;
+      }
+
+     </style>
+
+     <div class="code"><slot></slot></div>`;
+	}
+}
+
+window.customElements.define('tui-code', tuiCode);
+class tuiCodeLine extends HTMLElement {
+	constructor() {
+		super();
+	}
+
+	connectedCallback() {
+		let shadowDom = this.attachShadow({ mode: 'open' });
+
+		let attr = {
+			type: this.getAttribute('type'),
+		};
+
+		shadowDom.innerHTML = `
+    <style>
+      .code{
+        background-color:#001626;
+        padding:5px;
+        font-family: monospace;
+        font-size:10pt;
+        color:#c5cddb;
         border-radius: 5px;
         display:inhereit;
       }
@@ -31,4 +63,4 @@ class tuiCode extends HTMLElement {
 	}
 }
 
-window.customElements.define('tui-code-line', tuiCode);
+window.customElements.define('tui-code-line', tuiCodeLine);

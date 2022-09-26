@@ -103,6 +103,111 @@
       </tui-hstack>
     </tui-container>
     <br />
+    <hr />
+    <br />
+
+    <tui-container padding="10">
+      <h3>Modal</h3>
+
+      <tui-container>
+        <tui-code>
+          &lt;tui-modal id="modal" &gt;
+          <blockquote>
+            &lt;tui-modal-header&gt;
+            <blockquote>
+              &lt;tui-modal-title&gt;
+              Modal Title
+              &lt;/tui-modal-title&gt; <br />
+              &lt;span style="cursor:pointer" onclick="modal('close')" &gt;
+              x
+              &lt;/span&gt;
+            </blockquote>
+            &lt;/tui-modal-header&gt; <br />
+            &lt;tui-modal-body&gt;
+            <blockquote>
+              Body
+            </blockquote>
+            &lt;/tui-modal-body&gt; <br />
+            &lt;tui-modal-footer&gt;
+            <blockquote>
+              &lt;tui-hstack justifyContent="flex-end" &gt;
+              <blockquote>
+                &lt;tui-button variant="danger" onclick="modal('close')"&gt;
+                <blockquote>
+                  Cancel
+                </blockquote>
+                &lt;/tui-button&gt; <br />
+                &lt;tui-button variant="primary" onclick="modal('close')" &gt;
+                <blockquote>
+                  Ok
+                </blockquote>
+                &lt;/tui-button&gt; <br />
+
+              </blockquote>
+              &lt;/tui-hstack&gt;
+            </blockquote>
+            &lt;/tui-modal-footer&gt; <br />
+
+
+          </blockquote>
+          &lt;/tui-modal&gt;
+        </tui-code>
+      </tui-container>
+
+      <br />
+
+      <tui-container w="100%">
+        <table>
+          <tr>
+            <th>
+              Attribute
+            </th>
+            <th>
+              Type
+            </th>
+            <th>
+              Values
+            </th>
+          </tr>
+          <tr>
+            <td>variant</td>
+            <td>string</td>
+            <td>
+              <tui-code-line>primary</tui-code-line>
+              <tui-code-line>danger</tui-code-line>
+              <tui-code-line>success</tui-code-line>
+              <tui-code-line>warning</tui-code-line>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <tui-button variant="primary" onclick="modal('open')">Open</tui-button>
+        <tui-modal id="modal">
+          <tui-modal-header>
+            <tui-modal-title>
+              Modal Title
+            </tui-modal-title>
+            <div class="modal-close">
+              <!-- Tiene estilo en linea porque no estaba tomando el estilo de CSS -->
+              <span id="close-modal" style="cursor:pointer" onclick="modal('close')">
+                x
+              </span>
+            </div>
+          </tui-modal-header>
+          <tui-modal-body>
+            Body
+          </tui-modal-body>
+          <tui-modal-footer>
+            <tui-hstack justifyContent="flex-end">
+              <tui-button variant="danger" filled="true" onclick="modal('close')">Cancel</tui-button>
+              <div style="width: 15px;"></div> <!-- Spacer -->
+              <tui-button variant="primary" onclick="modal('close')">Ok</tui-button>
+            </tui-hstack>
+          </tui-modal-footer>
+        </tui-modal>
+      </tui-container>
+
+    </tui-container>
 
 
 
@@ -121,6 +226,8 @@
   <script src="./components/layout.js"></script>
   <script src="./components/buttons.js"></script>
   <script src="./components/text.js"></script>
+  <script src="./components/modal.js"></script>
+
   <script src="./script.js"></script>
 </body>
 

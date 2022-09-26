@@ -170,6 +170,15 @@ class tuiButton extends HTMLElement {
       background-color: transparent;
       color: #7d7d7d;
     }
+
+    @media (max-width: 700px) {
+
+      .btn {
+        font-size: small;
+        padding: 10px 15px;
+      }
+
+    }
      </style>
 
      <button class="${classes}" ${disabled}><slot></slot></button>`;
