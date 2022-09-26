@@ -34,7 +34,7 @@
     </header>
 
     <hr />
-    <p> ⚠️ Under construction ⚠️ </p>
+    <h2> Components </h2>
     <hr />
 
     <tui-container padding=10>
@@ -177,56 +177,36 @@
 
       <br />
 
-      <tui-container w="100%">
-        <table>
-          <tr>
-            <th>
-              Attribute
-            </th>
-            <th>
-              Type
-            </th>
-            <th>
-              Values
-            </th>
-          </tr>
-          <tr>
-            <td>variant</td>
-            <td>string</td>
-            <td>
-              <tui-code-line>primary</tui-code-line>
-              <tui-code-line>danger</tui-code-line>
-              <tui-code-line>success</tui-code-line>
-              <tui-code-line>warning</tui-code-line>
-            </td>
-          </tr>
-        </table>
-        <br />
-        <tui-button variant="primary" onclick="togglemodal('open')">Open</tui-button>
-        <tui-modal id="modal">
-          <tui-modal-header>
-            <tui-modal-title>
-              Modal Title
-            </tui-modal-title>
-            <div class="modal-close">
-              <!-- Tiene estilo en linea porque no estaba tomando el estilo de CSS -->
-              <span id="close-modal" style="cursor:pointer" onclick="togglemodal('close')">
-                x
-              </span>
-            </div>
-          </tui-modal-header>
-          <tui-modal-body>
-            Body
-          </tui-modal-body>
-          <tui-modal-footer>
-            <tui-hstack justifyContent="flex-end">
-              <tui-button variant="danger" filled="true" onclick="togglemodal('close')">Cancel</tui-button>
-              <div style="width: 15px;"></div> <!-- Spacer -->
-              <tui-button variant="primary" onclick="togglemodal('close')">Ok</tui-button>
-            </tui-hstack>
-          </tui-modal-footer>
-        </tui-modal>
-      </tui-container>
+
+      <br />
+      <tui-button variant="primary" onclick="togglemodal('open')">Open</tui-button>
+      <tui-modal id="modal">
+        <tui-modal-header>
+          <tui-modal-title>
+            Modal Title
+          </tui-modal-title>
+          <div class="modal-close">
+            <!-- Tiene estilo en linea porque no estaba tomando el estilo de CSS -->
+            <span id="close-modal" style="cursor:pointer" onclick="togglemodal('close')">
+              x
+            </span>
+          </div>
+        </tui-modal-header>
+        <tui-modal-body>
+          Body
+        </tui-modal-body>
+        <tui-modal-footer>
+          <tui-hstack justifyContent="flex-end">
+            <tui-button variant="danger" filled="true" onclick="togglemodal('close')">Cancel</tui-button>
+            <div style="width: 15px;"></div> <!-- Spacer -->
+            <tui-button variant="primary" onclick="togglemodal('close')">Ok</tui-button>
+          </tui-hstack>
+        </tui-modal-footer>
+      </tui-modal>
+
+
+      <hr />
+    </tui-container>
 
     </tui-container>
 
