@@ -21,7 +21,7 @@ const modalActions = {
  * @param {string} action - Accion que tiene que realizar el modal de nueva receta | tiene que ser open/close
  */
 
-function modal(action) {
+function togglemodal(action) {
 	if (action === 'open') {
 		let modal = document.getElementById('modal');
 		modalActions.show(modal);

@@ -111,6 +111,9 @@
 
       <tui-container>
         <tui-code>
+          &lt;tui-button variant="primary" onclick="togglemodal('open')"&gt; Open &lt;/tui-button&gt;
+          <br />
+          <br />
           &lt;tui-modal id="modal" &gt;
           <blockquote>
             &lt;tui-modal-header&gt;
@@ -118,7 +121,7 @@
               &lt;tui-modal-title&gt;
               Modal Title
               &lt;/tui-modal-title&gt; <br />
-              &lt;span style="cursor:pointer" onclick="modal('close')" &gt;
+              &lt;span style="cursor:pointer" onclick="togglemodal('close')" &gt;
               x
               &lt;/span&gt;
             </blockquote>
@@ -132,12 +135,12 @@
             <blockquote>
               &lt;tui-hstack justifyContent="flex-end" &gt;
               <blockquote>
-                &lt;tui-button variant="danger" onclick="modal('close')"&gt;
+                &lt;tui-button variant="danger" onclick="togglemodal('close')"&gt;
                 <blockquote>
                   Cancel
                 </blockquote>
                 &lt;/tui-button&gt; <br />
-                &lt;tui-button variant="primary" onclick="modal('close')" &gt;
+                &lt;tui-button variant="primary" onclick="togglemodal('close')" &gt;
                 <blockquote>
                   Ok
                 </blockquote>
@@ -147,10 +150,28 @@
               &lt;/tui-hstack&gt;
             </blockquote>
             &lt;/tui-modal-footer&gt; <br />
-
-
           </blockquote>
           &lt;/tui-modal&gt;
+          <br />
+          <br />
+          &lt;script&gt;
+          <blockquote>
+            function togglemodal(action) {
+            <blockquote>
+              if (action === 'open') {
+              <blockquote>
+                let modal = document.getElementById('modal');
+                modal.setAttribute('show', 'true');
+              </blockquote>
+              } else if (action === 'close') {
+              <blockquote>
+                let modal = document.getElementById('modal');
+                modal.removeAttribute('show', 'false');
+              </blockquote>
+              }
+            </blockquote>
+          </blockquote>
+          &lt;/script&gt;
         </tui-code>
       </tui-container>
 
@@ -181,7 +202,7 @@
           </tr>
         </table>
         <br />
-        <tui-button variant="primary" onclick="modal('open')">Open</tui-button>
+        <tui-button variant="primary" onclick="togglemodal('open')">Open</tui-button>
         <tui-modal id="modal">
           <tui-modal-header>
             <tui-modal-title>
@@ -189,7 +210,7 @@
             </tui-modal-title>
             <div class="modal-close">
               <!-- Tiene estilo en linea porque no estaba tomando el estilo de CSS -->
-              <span id="close-modal" style="cursor:pointer" onclick="modal('close')">
+              <span id="close-modal" style="cursor:pointer" onclick="togglemodal('close')">
                 x
               </span>
             </div>
@@ -199,9 +220,9 @@
           </tui-modal-body>
           <tui-modal-footer>
             <tui-hstack justifyContent="flex-end">
-              <tui-button variant="danger" filled="true" onclick="modal('close')">Cancel</tui-button>
+              <tui-button variant="danger" filled="true" onclick="togglemodal('close')">Cancel</tui-button>
               <div style="width: 15px;"></div> <!-- Spacer -->
-              <tui-button variant="primary" onclick="modal('close')">Ok</tui-button>
+              <tui-button variant="primary" onclick="togglemodal('close')">Ok</tui-button>
             </tui-hstack>
           </tui-modal-footer>
         </tui-modal>
