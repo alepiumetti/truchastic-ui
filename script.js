@@ -12,7 +12,7 @@ const modalActions = {
 };
 
 // -------------------------------
-// MODAL RECIPE
+// MODAL FUNCTIONS
 // -------------------------------
 
 /**
@@ -30,3 +30,27 @@ function togglemodal(action) {
 		modalActions.hide(modal);
 	}
 }
+
+// -------------------------------
+// CARD
+// -------------------------------
+
+// CARD WITH TRANSITION
+
+function toggleCard(card_header) {
+	let growDiv = card_header.parentNode.querySelector('tui-transition-card');
+	console.log(growDiv.clientHeight);
+	if (growDiv.clientHeight) {
+		growDiv.style.height = 0;
+	} else {
+		let wrapper = card_header.parentNode.querySelector('tui-card-body');
+
+		console.log(wrapper.clientHeight);
+
+		growDiv.style.height = wrapper.clientHeight + 'px';
+	}
+}
+
+// -------------------------------
+// HANDLERS BUTTONS
+// -------------------------------

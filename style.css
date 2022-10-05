@@ -779,47 +779,6 @@ td {
 
 /* Cards */
 
-.card-header {
-	margin: 1px;
-	padding: 0px 10px;
-	border-bottom: 2px solid var(--mainColor);
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
-	text-transform: uppercase;
-	cursor: pointer;
-}
-
-.card {
-	margin: 10px;
-	padding: 5px;
-	border-radius: 4px;
-	position: relative;
-	background-color: #fff;
-	transition: border-color.55s;
-	transition: box-shadow.55s;
-	border: 1px solid rgba(0, 0, 0, 0.13);
-	box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.1);
-}
-
-.card:hover {
-	transition: border-color.55s;
-	transition: box-shadow.55s;
-	border-radius: 4px;
-	border-color: var(--mainColor);
-	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.3);
-}
-
-.transition-card-body {
-	-moz-transition: height 0.5s;
-	-ms-transition: height 0.5s;
-	-o-transition: height 0.5s;
-	-webkit-transition: height 0.5s;
-	transition: height 0.5s;
-	height: 0;
-	overflow: hidden;
-}
-
 .card-body {
 	display: flex;
 	flex-direction: column;
