@@ -1,18 +1,18 @@
 class TuiModal extends HTMLElement {
 	constructor() {
 		super();
-		this.attachShadow({ mode: 'open' });
+		this.attachShadow({ mode: "open" });
 		this._modal;
 
-		const modal = document.createElement('div');
+		const modal = document.createElement("div");
 
-		modal.classList.add('modal');
+		modal.classList.add("modal");
 
-		const modal_content = document.createElement('div');
+		const modal_content = document.createElement("div");
 
-		modal_content.classList.add('modal-content');
+		modal_content.classList.add("modal-content");
 
-		const slot = document.createElement('slot');
+		const slot = document.createElement("slot");
 
 		modal_content.append(slot);
 		modal.append(modal_content);
@@ -42,9 +42,13 @@ class TuiModal extends HTMLElement {
     flex-direction: column;
   }
 
+  @media (max-width: 700px) {
+
+  }
+
   `;
 
-		const style = document.createElement('style');
+		const style = document.createElement("style");
 
 		style.textContent = styleContent;
 
@@ -52,25 +56,25 @@ class TuiModal extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ['show'];
+		return ["show"];
 	}
 
 	attributeChangedCallback(name, oldValue, newValue) {
-		if (name === 'show' && (newValue === 'true' || newValue === true)) {
-			this._modal.style.display = 'block';
+		if (name === "show" && (newValue === "true" || newValue === true)) {
+			this._modal.style.display = "block";
 		} else {
-			this._modal.style.display = 'none';
+			this._modal.style.display = "none";
 		}
 	}
 
 	connectedCallback() {
-		this._modal = this.shadowRoot.querySelector('.modal');
+		this._modal = this.shadowRoot.querySelector(".modal");
 	}
 
 	disconnectedCallback() {}
 }
 
-window.customElements.define('tui-modal', TuiModal);
+window.customElements.define("tui-modal", TuiModal);
 
 class TuiModalHeader extends HTMLElement {
 	constructor() {
@@ -78,7 +82,7 @@ class TuiModalHeader extends HTMLElement {
 	}
 
 	connectedCallback() {
-		let shadowDom = this.attachShadow({ mode: 'open' });
+		let shadowDom = this.attachShadow({ mode: "open" });
 
 		const styleContent = `
     .modal-header {
@@ -87,17 +91,21 @@ class TuiModalHeader extends HTMLElement {
       width: 100%;
       justify-content:space-between;
     }
+
+    @media (max-width: 700px) {
+
+    }
     `;
 
-		const style = document.createElement('style');
+		const style = document.createElement("style");
 
 		style.textContent = styleContent;
 
-		const modal_header = document.createElement('div');
+		const modal_header = document.createElement("div");
 
-		modal_header.classList.add('modal-header');
+		modal_header.classList.add("modal-header");
 
-		const slot = document.createElement('slot');
+		const slot = document.createElement("slot");
 
 		modal_header.append(slot);
 
@@ -105,7 +113,7 @@ class TuiModalHeader extends HTMLElement {
 	}
 }
 
-window.customElements.define('tui-modal-header', TuiModalHeader);
+window.customElements.define("tui-modal-header", TuiModalHeader);
 
 class TuiModalTitle extends HTMLElement {
 	constructor() {
@@ -113,24 +121,28 @@ class TuiModalTitle extends HTMLElement {
 	}
 
 	connectedCallback() {
-		let shadowDom = this.attachShadow({ mode: 'open' });
+		let shadowDom = this.attachShadow({ mode: "open" });
 
 		const styleContent = `
     .modal-title {
       font-size: larger;
       font-weight: bold;
     }
+
+    @media (max-width: 700px) {
+
+    }
     `;
 
-		const style = document.createElement('style');
+		const style = document.createElement("style");
 
 		style.textContent = styleContent;
 
-		const modal_title = document.createElement('div');
+		const modal_title = document.createElement("div");
 
-		modal_title.classList.add('modal-title');
+		modal_title.classList.add("modal-title");
 
-		const slot = document.createElement('slot');
+		const slot = document.createElement("slot");
 
 		modal_title.append(slot);
 
@@ -138,7 +150,7 @@ class TuiModalTitle extends HTMLElement {
 	}
 }
 
-window.customElements.define('tui-modal-title', TuiModalTitle);
+window.customElements.define("tui-modal-title", TuiModalTitle);
 
 class TuiModalBody extends HTMLElement {
 	constructor() {
@@ -146,23 +158,27 @@ class TuiModalBody extends HTMLElement {
 	}
 
 	connectedCallback() {
-		let shadowDom = this.attachShadow({ mode: 'open' });
+		let shadowDom = this.attachShadow({ mode: "open" });
 
 		const styleContent = `
     .modal-body {
       padding: 5px 0px;
     }
+
+    @media (max-width: 700px) {
+
+    }
     `;
 
-		const style = document.createElement('style');
+		const style = document.createElement("style");
 
 		style.textContent = styleContent;
 
-		const modal_body = document.createElement('div');
+		const modal_body = document.createElement("div");
 
-		modal_body.classList.add('modal-body');
+		modal_body.classList.add("modal-body");
 
-		const slot = document.createElement('slot');
+		const slot = document.createElement("slot");
 
 		modal_body.append(slot);
 
@@ -170,7 +186,7 @@ class TuiModalBody extends HTMLElement {
 	}
 }
 
-window.customElements.define('tui-modal-body', TuiModalBody);
+window.customElements.define("tui-modal-body", TuiModalBody);
 
 class TuiModalFooter extends HTMLElement {
 	constructor() {
@@ -178,23 +194,32 @@ class TuiModalFooter extends HTMLElement {
 	}
 
 	connectedCallback() {
-		let shadowDom = this.attachShadow({ mode: 'open' });
+		let shadowDom = this.attachShadow({ mode: "open" });
 
 		const styleContent = `.modal-footer {
       padding: 5px 0px;
       display: flex;
       flex-direction: row;
-    }`;
+    }
+    
+    @media (max-width: 700px) {
+      .modal-footer {
+        flex-direction: column;
+      }
+    }
+    
+    
+    `;
 
-		const style = document.createElement('style');
+		const style = document.createElement("style");
 
 		style.textContent = styleContent;
 
-		const modal_footer = document.createElement('div');
+		const modal_footer = document.createElement("div");
 
-		modal_footer.classList.add('modal-footer');
+		modal_footer.classList.add("modal-footer");
 
-		const slot = document.createElement('slot');
+		const slot = document.createElement("slot");
 
 		modal_footer.append(slot);
 
@@ -202,7 +227,7 @@ class TuiModalFooter extends HTMLElement {
 	}
 }
 
-window.customElements.define('tui-modal-footer', TuiModalFooter);
+window.customElements.define("tui-modal-footer", TuiModalFooter);
 
 {
 	/* <div id="modal-nueva-receta" class="modal">
