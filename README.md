@@ -2,4 +2,6 @@
 
 CSS Library based on web components | Inspired on Elasti UI and Chakra UI
 
-⚠️ Under construction ⚠️
+How to use in webpage: (https://alepiumetti.github.io/truchastic-ui/)[https://alepiumetti.github.io/truchastic-ui/]
+
+⚠️ in constant development ⚠️
