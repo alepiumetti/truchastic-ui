@@ -4,10 +4,10 @@
 
 const modalActions = {
 	show: (modal) => {
-		modal.setAttribute('show', 'true');
+		modal.setAttribute("show", "true");
 	},
 	hide: (modal) => {
-		modal.removeAttribute('show', 'false');
+		modal.removeAttribute("show", "false");
 	},
 };
 
@@ -21,12 +21,12 @@ const modalActions = {
  * @param {string} action - Accion que tiene que realizar el modal de nueva receta | tiene que ser open/close
  */
 
-function togglemodal(action) {
-	if (action === 'open') {
-		let modal = document.getElementById('modal');
+function togglemodal(modalID, action) {
+	if (action === "open") {
+		let modal = document.getElementById(modalID);
 		modalActions.show(modal);
-	} else if (action === 'close') {
-		let modal = document.getElementById('modal');
+	} else if (action === "close") {
+		let modal = document.getElementById(modalID);
 		modalActions.hide(modal);
 	}
 }
@@ -38,16 +38,16 @@ function togglemodal(action) {
 // CARD WITH TRANSITION
 
 function toggleCard(card_header) {
-	let growDiv = card_header.parentNode.querySelector('tui-transition-card');
+	let growDiv = card_header.parentNode.querySelector("tui-transition-card");
 	console.log(growDiv.clientHeight);
 	if (growDiv.clientHeight) {
 		growDiv.style.height = 0;
 	} else {
-		let wrapper = card_header.parentNode.querySelector('tui-card-body');
+		let wrapper = card_header.parentNode.querySelector("tui-card-body");
 
 		console.log(wrapper.clientHeight);
 
-		growDiv.style.height = wrapper.clientHeight + 'px';
+		growDiv.style.height = wrapper.clientHeight + "px";
 	}
 }
 

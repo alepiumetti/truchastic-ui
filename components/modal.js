@@ -4,6 +4,10 @@ class TuiModal extends HTMLElement {
 		this.attachShadow({ mode: "open" });
 		this._modal;
 
+		let attr = {
+			size: this.getAttribute("size"),
+		};
+
 		const modal = document.createElement("div");
 
 		modal.classList.add("modal");
@@ -11,6 +15,25 @@ class TuiModal extends HTMLElement {
 		const modal_content = document.createElement("div");
 
 		modal_content.classList.add("modal-content");
+
+		switch (attr.size) {
+			case "xl":
+				modal_content.classList.add("xl");
+				break;
+
+			case "md":
+				modal_content.classList.add("md");
+				break;
+
+			case "sm":
+				modal_content.classList.add("sm");
+				break;
+
+			default:
+				modal_content.classList.add("md");
+
+				break;
+		}
 
 		const slot = document.createElement("slot");
 
@@ -36,12 +59,23 @@ class TuiModal extends HTMLElement {
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
   }
+  
+  .md{
+    width: 50%;
+  }
+  
+  .sm{
+    width: 30%;
+  }
 
+  .xl {
+    width: 80%;
+  }
+  
   @media (max-width: 700px) {
 
   }
