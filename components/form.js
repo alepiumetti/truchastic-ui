@@ -83,12 +83,17 @@ class tuiInput extends HTMLElement {
 		const attr = {
 			variant: this.getAttribute("variant"),
 			type: this.getAttribute("type"),
+			fullWidth: this.getAttribute("fullWidth"),
 		};
 
 		if (attr.type) {
 			input.setAttribute("type", attr.type);
 		} else {
 			input.setAttribute("type", "text");
+		}
+
+		if (attr.fullWidth == "true") {
+			input.classList.add("full-width");
 		}
 
 		switch (attr.variant) {
@@ -155,6 +160,10 @@ class tuiInput extends HTMLElement {
       .success:focus {
         border-bottom-color: #127271;
       }
+
+			.full-width{
+				width:100%
+			}
     }
     `;
 
