@@ -109,6 +109,36 @@
     <tui-container padding="10">
       <h3>Modal</h3>
 
+      <br />
+
+      <tui-container w="100%">
+        <table>
+          <tr>
+            <th>
+              Attribute
+            </th>
+            <th>
+              Type
+            </th>
+            <th>
+              Values
+            </th>
+          </tr>
+          <tr>
+            <td>size</td>
+            <td>string</td>
+            <td>
+              <tui-code-line>default: md</tui-code-line>
+              <tui-code-line>sm</tui-code-line>
+              <tui-code-line>md</tui-code-line>
+              <tui-code-line>xl</tui-code-line>
+            </td>
+          </tr>
+        </table>
+      </tui-container>
+
+      <br />
+
       <tui-container>
         <tui-code>
           &lt;tui-button variant="primary" onclick="togglemodal('open')"&gt; Open &lt;/tui-button&gt;
@@ -182,7 +212,7 @@
 
       <!-- Normal Modal -->
 
-      <tui-button variant="primary" onclick="togglemodal('modal-normal','open')">Open Modal XL</tui-button>
+      <tui-button variant="primary" onclick="togglemodal('modal-normal','open')">Open Modal xl</tui-button>
       <tui-modal id="modal-normal" size="xl">
         <tui-modal-header>
           <tui-modal-title>
@@ -209,7 +239,7 @@
 
       <!-- Size Medium -->
 
-      <tui-button variant="primary" onclick="togglemodal('modal-medium','open')">Open Modal Medium</tui-button>
+      <tui-button variant="primary" onclick="togglemodal('modal-medium','open')">Open Modal md</tui-button>
       <tui-modal id="modal-medium" size="md">
         <tui-modal-header>
           <tui-modal-title>
@@ -236,7 +266,7 @@
 
       <!-- Size Small -->
 
-      <tui-button variant="primary" onclick="togglemodal('modal-small','open')">Open Modal Small</tui-button>
+      <tui-button variant="primary" onclick="togglemodal('modal-small','open')">Open Modal sm</tui-button>
       <tui-modal id="modal-small" size="sm">
         <tui-modal-header>
           <tui-modal-title>
