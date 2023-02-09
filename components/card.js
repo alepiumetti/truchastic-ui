@@ -4,38 +4,27 @@ class TuiCard extends HTMLElement {
 	}
 
 	connectedCallback() {
-		let shadowDom = this.attachShadow({ mode: 'open' });
+		let shadowDom = this.attachShadow({ mode: "open" });
 
-		const card = document.createElement('div');
+		const card = document.createElement("div");
 
-		card.classList.add('card');
-		card.classList.add('with-transition');
+		card.classList.add("card");
+		card.classList.add("with-transition");
 
-		const slot = document.createElement('slot');
+		const slot = document.createElement("slot");
 
 		card.append(slot);
 
 		const styleContent = `.card {
       margin: 10px;
-      padding: 5px;
-      border-radius: 4px;
-      position: relative;
+      padding: 5px 15px;
+      border-radius: 12px;
       background-color: #fff;
-      transition: border-color.55s;
-      transition: box-shadow.55s;
       border: 1px solid rgba(0, 0, 0, 0.13);
-      box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.1);
     }
-    
-    .card:hover {
-      transition: border-color.55s;
-      transition: box-shadow.55s;
-      border-radius: 4px;
-      border-color: var(--mainColor);
-      box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.3);
-    }`;
+    `;
 
-		const style = document.createElement('style');
+		const style = document.createElement("style");
 
 		style.textContent = styleContent;
 
@@ -43,7 +32,7 @@ class TuiCard extends HTMLElement {
 	}
 }
 
-window.customElements.define('tui-card', TuiCard);
+window.customElements.define("tui-card", TuiCard);
 
 class TuiCardHeader extends HTMLElement {
 	constructor() {
@@ -51,30 +40,21 @@ class TuiCardHeader extends HTMLElement {
 	}
 
 	connectedCallback() {
-		let shadowDom = this.attachShadow({ mode: 'open' });
+		let shadowDom = this.attachShadow({ mode: "open" });
 
-		const card_header = document.createElement('div');
+		const card_header = document.createElement("div");
 
-		card_header.classList.add('card-header');
+		card_header.classList.add("card-header");
 
-		const slot = document.createElement('slot');
+		const slot = document.createElement("slot");
 
 		card_header.append(slot);
 
-		const styleContent = `
-    .card-header {
-      margin: 1px;
-      padding: 0px 10px;
-      border-bottom: 2px solid var(--mainColor);
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
+		const styleContent = `.card-header {
+    }    
     `;
 
-		const style = document.createElement('style');
+		const style = document.createElement("style");
 
 		style.textContent = styleContent;
 
@@ -82,44 +62,7 @@ class TuiCardHeader extends HTMLElement {
 	}
 }
 
-window.customElements.define('tui-card-header', TuiCardHeader);
-
-class TuiTransitionCard extends HTMLElement {
-	constructor() {
-		super();
-	}
-
-	connectedCallback() {
-		let shadowDom = this.attachShadow({ mode: 'open' });
-
-		const transition_card = document.createElement('div');
-
-		transition_card.classList.add('transition-card-body');
-
-		const slot = document.createElement('slot');
-
-		transition_card.append(slot);
-
-		const styleContent = `
-    .transition-card-body {
-      -moz-transition: height 0.5s;
-      -ms-transition: height 0.5s;
-      -o-transition: height 0.5s;
-      -webkit-transition: height 0.5s;
-      transition: height 0.5s;
-      height: 0;
-      overflow: hidden;
-    }`;
-
-		const style = document.createElement('style');
-
-		style.textContent = styleContent;
-
-		shadowDom.append(style, transition_card);
-	}
-}
-
-window.customElements.define('tui-transition-card', TuiTransitionCard);
+window.customElements.define("tui-card-header", TuiCardHeader);
 
 class TuiCardBody extends HTMLElement {
 	constructor() {
@@ -127,30 +70,29 @@ class TuiCardBody extends HTMLElement {
 	}
 
 	connectedCallback() {
-		let shadowDom = this.attachShadow({ mode: 'open' });
+		let shadowDom = this.attachShadow({ mode: "open" });
 
-		const card_body = document.createElement('div');
+		const card_body = document.createElement("div");
 
-		card_body.classList.add('card-body');
+		card_body.classList.add("card-body");
 
-		const slot = document.createElement('slot');
+		const slot = document.createElement("slot");
 
 		card_body.append(slot);
 
 		const styleContent = `.card-body {
     display: flex;
     flex-direction: column;
-    padding: 5px 15px;
   }`;
 
-		const style = document.createElement('style');
+		const style = document.createElement("style");
 		style.append(styleContent);
 
 		shadowDom.append(style, card_body);
 	}
 }
 
-window.customElements.define('tui-card-body', TuiCardBody);
+window.customElements.define("tui-card-body", TuiCardBody);
 
 {
 	/* <div class="card with-transition hide" id="counter">
